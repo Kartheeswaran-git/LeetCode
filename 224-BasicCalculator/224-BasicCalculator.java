@@ -1,16 +1,31 @@
-// Last updated: 26/05/2026, 23:27:37
-1class Solution {
-2  public int countDigitOne(int n) {
-3    int ans = 0;
-4    for (long pow10 = 1; pow10 <= n; pow10 *= 10) {
-5      final long divisor = pow10 * 10;
-6      final int quotient = (int) (n / divisor);
-7      final int remainder = (int) (n % divisor);
-8      if (quotient > 0)
-9        ans += quotient * pow10;
-10      if (remainder >= pow10)
-11        ans += Math.min(remainder - pow10 + 1, pow10);
-12    }
-13    return ans;
-14  }
-15}
+// Last updated: 26/05/2026, 23:29:21
+1/**
+2 * Definition for a binary tree node.
+3 * public class TreeNode {
+4 *     int val;
+5 *     TreeNode left;
+6 *     TreeNode right;
+7 *     TreeNode() {}
+8 *     TreeNode(int val) { this.val = val; }
+9 *     TreeNode(int val, TreeNode left, TreeNode right) {
+10 *         this.val = val;
+11 *         this.left = left;
+12 *         this.right = right;
+13 *     }
+14 * }
+15 */
+16class Solution {
+17    int count = 0;
+18    public int countNodes(TreeNode root) {
+19        resolve(root);
+20        return count;
+21    }
+22    private void resolve(TreeNode node){
+23        if(node==null){
+24            return;
+25        }
+26        resolve(node.left);
+27        resolve(node.right);
+28        count++;
+29    }
+30}
