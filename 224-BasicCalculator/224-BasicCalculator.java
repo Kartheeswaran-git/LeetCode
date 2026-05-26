@@ -1,31 +1,24 @@
-// Last updated: 26/05/2026, 23:29:21
-1/**
-2 * Definition for a binary tree node.
-3 * public class TreeNode {
-4 *     int val;
-5 *     TreeNode left;
-6 *     TreeNode right;
-7 *     TreeNode() {}
-8 *     TreeNode(int val) { this.val = val; }
-9 *     TreeNode(int val, TreeNode left, TreeNode right) {
-10 *         this.val = val;
-11 *         this.left = left;
-12 *         this.right = right;
-13 *     }
-14 * }
-15 */
-16class Solution {
-17    int count = 0;
-18    public int countNodes(TreeNode root) {
-19        resolve(root);
-20        return count;
-21    }
-22    private void resolve(TreeNode node){
-23        if(node==null){
-24            return;
-25        }
-26        resolve(node.left);
-27        resolve(node.right);
-28        count++;
-29    }
-30}
+// Last updated: 26/05/2026, 23:30:01
+1class Solution {
+2    public List<String> readBinaryWatch(int turnedOn) {
+3        List<String> result = new ArrayList<>();
+4        
+5        for (int hour = 0; hour < 12; hour++) {
+6            
+7            for (int minute = 0; minute < 60; minute++) {
+8                
+9                int totalBits = Integer.bitCount(hour) + Integer.bitCount(minute);
+10                
+11                if (totalBits == turnedOn) {
+12                    
+13                    String time = hour + ":" + 
+14                                  (minute < 10 ? "0" + minute : minute);
+15                    
+16                    result.add(time);
+17                }
+18            }
+19        }
+20        
+21        return result;
+22    }
+23}
