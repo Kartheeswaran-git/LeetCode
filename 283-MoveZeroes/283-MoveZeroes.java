@@ -1,0 +1,15 @@
+// Last updated: 01/06/2026, 09:29:40
+1class Solution {
+2    public void moveZeroes(int[] nums) {
+3        int j = 0;
+4
+5        for (int i = 0; i < nums.length; i++) {
+6            if (nums[i] != 0) {
+7                int temp = nums[i];
+8                nums[i] = nums[j];
+9                nums[j] = temp;
+10                j++;
+11            }
+12        }        
+13    }
+14}
