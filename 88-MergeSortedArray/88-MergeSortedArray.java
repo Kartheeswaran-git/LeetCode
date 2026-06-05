@@ -1,12 +1,13 @@
-// Last updated: 05/06/2026, 23:53:52
+// Last updated: 06/06/2026, 00:06:37
 1class Solution {
-2    public int removeElement(int[] nums, int val) {
-3        int count =0;
-4        for(int i=0;i<nums.length;i++)
-5        {
-6            if(nums[i]!=val)
-7            nums[count++]=nums[i];  
-8        }
-9        return count;
-10    }
-11}
+2    public int removeDuplicates(int[] n) {
+3        int j = 0;
+4        for (int i = 1; i < n.length; i++) {
+5            if (n[j] != n[i]) {
+6                n[++j] = n[i];
+7                
+8            }
+9        }
+10        return j+1;
+11    }
+12}
