@@ -1,11 +1,12 @@
-// Last updated: 05/06/2026, 23:41:14
+// Last updated: 05/06/2026, 23:53:52
 1class Solution {
-2    public void merge(int[] n1, int m, int[] n2, int n) {
-3        for(int i=m,j=0;i<n1.length;i++)
-4        {
-5            n1[i]=n2[j];
-6            j++;
-7        }
-8        Arrays.sort(n1);
-9    }
-10}
+2    public int removeElement(int[] nums, int val) {
+3        int count =0;
+4        for(int i=0;i<nums.length;i++)
+5        {
+6            if(nums[i]!=val)
+7            nums[count++]=nums[i];  
+8        }
+9        return count;
+10    }
+11}
