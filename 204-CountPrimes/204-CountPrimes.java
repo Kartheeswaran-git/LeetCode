@@ -1,4 +1,4 @@
-// Last updated: 10/06/2026, 18:05:16
+// Last updated: 10/06/2026, 18:06:24
 1class Solution {
 2    public int countPrimes(int n) {
 3        boolean[] p = new boolean[n];
