@@ -1,13 +1,14 @@
-# Last updated: 13/06/2026, 12:26:26
+# Last updated: 13/06/2026, 12:36:38
 1class Solution(object):
-2    def maximumWealth(self, a):
-3        max=0
-4        for i in range(0,len(a)):
-5            sum=0
-6            for j in range(0,len(a[i])):
-7                sum+=a[i][j]
-8            if max<sum:
-9                max=sum
-10        return max
-11
-12        
+2    def fizzBuzz(self, n):
+3        a=[]
+4        for i in range(1,n+1):
+5            if(i%3==0 and i%5==0):
+6                a.append("FizzBuzz")
+7            elif(i%3==0):
+8                a.append("Fizz")
+9            elif(i%5==0):
+10                a.append("Buzz")
+11            else:
+12                a.append(str(i))
+13        return a
