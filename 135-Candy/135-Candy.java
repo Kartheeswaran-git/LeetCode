@@ -1,18 +1,17 @@
-// Last updated: 14/06/2026, 21:12:39
+// Last updated: 14/06/2026, 22:40:29
 1class Solution {
-2    public int candy(int[] arr) {
-3        int n = arr.length;
-4        int cnt = 0;
-5        int[] c = new int[n];
-6        for (int i = 0; i < n; i++) c[i] = 1;
-7        for (int i = 1; i < n; i++)
-8            if (arr[i] > arr[i - 1])
-9                c[i] = c[i - 1] + 1;
-10        for (int i = n - 1; i > 0; i--) {
-11            if (arr[i - 1] > arr[i])
-12                c[i - 1] = Math.max(c[i] + 1, c[i - 1]);
-13            cnt += c[i - 1];
-14        }
-15        return cnt + c[n - 1];
-16    }
-17}
+2    public boolean isIsomorphic(String s, String t) {
+3
+4        int map1[] = new int[200];
+5        int map2[] = new int[200];
+6        if (s.length() != t.length())
+7            return false;
+8        for (int i = 0; i < s.length(); i++) {
+9            if (map1[s.charAt(i)] != map2[t.charAt(i)])
+10                return false;
+11            map1[s.charAt(i)] = i + 1;
+12            map2[t.charAt(i)] = i + 1;
+13        }
+14        return true;
+15    }
+16}
